@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href='style.css' rel='stylesheet' type='text/css' />
+    <script src='big.js'></script>
+    <script src='showdown.js'></script>
+  </head>
+  <body>
+# [@patrickarlt](http://twitter.com/patrickarlt)
+Designer / Developer<br>
+Esri R&amp;D Center, Portland
+
+# Designing Great Documentation
+
+!["New Doc"](img/documentation.png "background")
+
+!["Old Doc Homepage"](img/old-doc-home.png "background")
+
+# Why Redesign
+* New effort to give developers better tools
+* Hard to read
+* Hard to navigate
+
+# Readibility
+* Font size
+* Create heiarchy
+* Line length 50-80 characters
+* Line height
+
+# Navigation
+* Action Items
+* Labels
+* Keep it simple
+* Tables of contents
+
+!["Old Doc Page"](img/old-doc-page.png "background")
+
+!["New Doc Page"](img/new-doc-page.png "background")
+
+  </body>
+  <script>
+  var converter = new Showdown.converter();
+  var slides = document.body.innerHTML.split("\n\n");
+  document.body.innerHTML = "";
+  for(var i=0; i<slides.length-1; i++) {
+    console.log(i);
+    document.body.innerHTML += "<div>" + converter.makeHtml(slides[i]) + "</div>";
+  }
+  </script>
+</html>
